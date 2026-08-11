@@ -1,0 +1,16 @@
+##grflangid 0x00
+STR_GRF_NAME	:Cog - Alpha
+STR_GRF_DESCRIPTION	:Mt. Washington Cog Railway
+
+STR_RAILTYPE_NAME	:Cog Railroad
+STR_RAILTYPE_MENU	:Cog Railroad construction
+STR_RAILTYPE_BUILD	:New Cog vehicle
+STR_RAILTYPE_NEWENGINE	:Cog Rail engine
+STR_RAILTYPE_AUTOREPLACE	:Cog Rail Vehicles
+
+STR_PEPPERSASS_NAME	:Peppersass
+STR_SHINGLE_NAME	:Devil's Shingle
+STR_FALCON_NAME	:Falcon
+STR_DIESEL_NAME	:Wojo Nanatassis
+
+STR_PASSENGER_NAME	:Passenger Car

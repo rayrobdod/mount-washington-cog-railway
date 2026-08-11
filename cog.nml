@@ -1,0 +1,169 @@
+grf {
+	grfid: "RD\01\01";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 0;
+	min_compatible_version: 0;
+}
+railtypetable {
+	COG: ["COG "],
+}
+cargotable {
+	PASS,
+}
+
+
+spriteset(sprites_rail_gui, "gfx/rail/gui.png") {
+	//left_x,	upper_y,	width,	height,	offset_x,	offset_y
+	[ 12,	12,	20,	20,	0,	0]
+	[ 62,	12,	20,	20,	0,	0]
+	[ 112,	12,	20,	20,	0,	0]
+	[ 162,	12,	20,	20,	0,	0]
+	[ 212,	12,	20,	20,	0,	0]
+	[ 262,	12,	20,	20,	0,	0]
+	[ 312,	12,	20,	20,	0,	0]
+	[ 362,	12,	20,	20,	0,	0]
+	[ 0,	0,	32,	32,	0,	0]
+	[ 50,	0,	32,	32,	0,	0]
+	[ 100,	0,	32,	32,	0,	0]
+	[ 150,	0,	32,	32,	0,	0]
+	[ 200,	0,	32,	32,	0,	0]
+	[ 250,	0,	32,	32,	0,	0]
+	[ 300,	0,	32,	32,	0,	0]
+	[ 350,	0,	32,	32,	0,	0]
+}
+item(FEAT_RAILTYPES, item_rail_cog) {
+	property {
+		label: "COG ";
+		introduction_date: date(1869,01,01);
+		name: string(STR_RAILTYPE_NAME);
+		menu_text: string(STR_RAILTYPE_MENU);
+		build_window_caption: string(STR_RAILTYPE_BUILD);
+		autoreplace_text: string(STR_RAILTYPE_AUTOREPLACE);
+		new_engine_text: string(STR_RAILTYPE_NEWENGINE);
+		compatible_railtype_list: ["RAIL"];
+		construction_cost: 16;
+		maintenance_cost: 16;
+		acceleration_model: ACC_MODEL_RAIL;
+	}
+	graphics {
+		gui: sprites_rail_gui;
+	}
+}
+
+template tmpl_RichardWheeler_PixelTool_32_12_12() {
+	//left_x,	upper_y,	width,	height,	offset_x,	offset_y
+	[0,	0,	8,	28,	-3,	-16]
+	[9,	0,	22,	23,	-15,	-12]
+	[32,	0,	32,	15,	-19,	-10]
+	[65,	0,	22,	23,	-8,	-13]
+	[88+0,	0,	8,	28,	-3,	-16]
+	[88+9,	0,	22,	23,	-15,	-13]
+	[88+32,	0,	32,	15,	-15,	-10]
+	[88+65,	0,	22,	23,	-8,	-14]
+}
+spriteset(sprites_train_peppersass, "gfx/vehicle/peppersass.png") { tmpl_RichardWheeler_PixelTool_32_12_12() }
+
+template tmpl_RichardWheeler_PixelTool_32_10_12() {
+	//left_x,	upper_y,	width,	height,	offset_x,	offset_y
+	[0,	0,	8,	26,	-3,	-13]
+	[9,	0,	22,	21,	-15,	-11]
+	[32,	0,	32,	13,	-17,	-8]
+	[65,	0,	22,	21,	-7,	-12]
+	[88+0,	0,	8,	26,	-3,	-11]
+	[88+9,	0,	22,	21,	-15,	-11]
+	[88+32,	0,	32,	13,	-16,	-9]
+	[88+65,	0,	22,	21,	-7,	-12]
+}
+spriteset(sprites_train_wajonanatassis, "gfx/vehicle/wajo-nanatassis.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
+spriteset(sprites_wagon_passenger, "gfx/vehicle/passenger.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
+
+spritegroup spritegroup_wagon_passenger {
+	loaded:	[sprites_wagon_passenger, sprites_wagon_passenger];
+	loading:	[sprites_wagon_passenger, sprites_wagon_passenger];
+}
+
+item(FEAT_TRAINS, item_train_peppersass) {
+	property {
+		name: string(STR_PEPPERSASS_NAME);
+		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		introduction_date: date(1869,01,01);
+		model_life: 12;
+		model_life: VEHICLE_NEVER_EXPIRES;
+		vehicle_life: 12;
+		reliability_decay: 20;
+		refittable_cargo_classes: 0;
+		loading_speed: 5;
+		cost_factor: 20;
+		running_cost_factor: 100;
+
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		speed: 40mph;
+		track_type: COG;
+		power: 1000 hp;
+		running_cost_base: RUNNING_COST_STEAM;
+		cargo_capacity: 0;
+		weight: 125 ton;
+		engine_class: ENGINE_CLASS_STEAM;
+		tractive_effort_coefficient: 1;
+		length: 8;
+		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, -1, DISABLE_WAGON_POWER);
+	}
+	graphics {
+		default: sprites_train_peppersass;
+	}
+}
+item(FEAT_TRAINS, item_train_diesel) {
+	property {
+		name: string(STR_DIESEL_NAME);
+		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		introduction_date: date(2008,01,01);
+		model_life: VEHICLE_NEVER_EXPIRES;
+		vehicle_life: 30;
+		reliability_decay: 20;
+		refittable_cargo_classes: 0;
+		loading_speed: 5;
+		cost_factor: 20;
+		running_cost_factor: 100 / 3;
+
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		// Real speed is 5mph, but other in-game trains can exceed that without difficulty even on slopes
+		speed: 60mph; 
+		track_type: COG;
+		power: 1000 hp;
+		running_cost_base: RUNNING_COST_DIESEL;
+		cargo_capacity: 0;
+		weight: 125 ton;
+		engine_class: ENGINE_CLASS_DIESEL;
+		tractive_effort_coefficient: 1;
+		length: 8;
+	}
+	graphics {
+		default: sprites_train_wajonanatassis;
+	}
+}
+item(FEAT_TRAINS, item_wagon_passenger) {
+	property {
+		name: string(STR_PASSENGER_NAME);
+		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		introduction_date: date(1869,01,01);
+		model_life: VEHICLE_NEVER_EXPIRES;
+		loading_speed: 5;
+		cost_factor: 100;
+		running_cost_factor: 100;
+
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		extra_flags: bitmask(VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_TRAIN_HAS_CAB);
+		track_type: COG;
+		power: 0;
+		running_cost_base: RUNNING_COST_NONE;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		default_cargo_type: PASS;
+		cargo_capacity: 70;
+		weight: 25 ton;
+		length: 8;
+	}
+	graphics {
+		default: spritegroup_wagon_passenger;
+	}
+}
