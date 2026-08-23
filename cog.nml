@@ -10,6 +10,7 @@ railtypetable {
 }
 cargotable {
 	PASS,
+	WOOD,
 }
 
 
@@ -78,10 +79,16 @@ template tmpl_RichardWheeler_PixelTool_32_10_12() {
 spriteset(sprites_train_falcon, "gfx/vehicle/falcon.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_wajonanatassis, "gfx/vehicle/wajo-nanatassis.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_wagon_passenger, "gfx/vehicle/passenger.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
+spriteset(sprites_wagon_flatcar, "gfx/vehicle/flatcar.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
+spriteset(sprites_wagon_flatcar_wood, "gfx/vehicle/flatcar_wood.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 
 spritegroup spritegroup_wagon_passenger {
 	loaded:	[sprites_wagon_passenger, sprites_wagon_passenger];
 	loading:	[sprites_wagon_passenger, sprites_wagon_passenger];
+}
+spritegroup spritegroup_wagon_flatcar {
+	loaded:	[sprites_wagon_flatcar, sprites_wagon_flatcar_wood];
+	loading:	[sprites_wagon_flatcar, sprites_wagon_flatcar_wood];
 }
 
 item(FEAT_TRAINS, item_train_peppersass) {
@@ -194,5 +201,30 @@ item(FEAT_TRAINS, item_wagon_passenger) {
 	}
 	graphics {
 		default: spritegroup_wagon_passenger;
+	}
+}
+item(FEAT_TRAINS, item_wagon_flatcar) {
+	property {
+		name: string(STR_FLATCAR_NAME);
+		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		introduction_date: date(1869,01,01);
+		model_life: VEHICLE_NEVER_EXPIRES;
+		loading_speed: 5;
+		cost_factor: 70;
+		running_cost_factor: 70;
+
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		extra_flags: bitmask(VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW, VEHICLE_FLAG_TRAIN_HAS_CAB);
+		track_type: COG;
+		power: 0;
+		running_cost_base: RUNNING_COST_NONE;
+		refittable_cargo_classes: bitmask(CC_PIECE_GOODS);
+		default_cargo_type: WOOD;
+		cargo_capacity: 30;
+		weight: 16 ton;
+		length: 8;
+	}
+	graphics {
+		default: spritegroup_wagon_flatcar;
 	}
 }
