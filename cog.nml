@@ -98,9 +98,10 @@ item(FEAT_TRAINS, item_train_peppersass) {
 		running_cost_factor: 100;
 
 		sprite_id: SPRITE_ID_NEW_TRAIN;
+		// Real speed is 3mph, but other in-game trains can exceed that without difficulty even on slopes
 		speed: 40mph;
 		track_type: COG;
-		power: 1000 hp;
+		power: 45 hp; // https://web.archive.org/web/20070814001057/http://www.cog-railway.com/lastrun.htm
 		running_cost_base: RUNNING_COST_STEAM;
 		cargo_capacity: 0;
 		weight: 125 ton;
@@ -129,7 +130,7 @@ item(FEAT_TRAINS, item_train_falcon) {
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		speed: 50mph;
 		track_type: COG;
-		power: 1000 hp;
+		power: 400 hp; // to find
 		running_cost_base: RUNNING_COST_STEAM;
 		cargo_capacity: 0;
 		weight: 125 ton;
@@ -152,13 +153,13 @@ item(FEAT_TRAINS, item_train_diesel) {
 		refittable_cargo_classes: 0;
 		loading_speed: 5;
 		cost_factor: 20;
-		running_cost_factor: 100 / 3;
+		running_cost_factor: 100 / 3; // Whatever the real cost of the steam trains, the biodiesel is a third of that
 
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		// Real speed is 5mph, but other in-game trains can exceed that without difficulty even on slopes
 		speed: 60mph; 
 		track_type: COG;
-		power: 1000 hp;
+		power: 600 hp; // https://www.thecog.com/diesel-debut
 		running_cost_base: RUNNING_COST_DIESEL;
 		cargo_capacity: 0;
 		weight: 125 ton;
