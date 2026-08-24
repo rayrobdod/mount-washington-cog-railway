@@ -76,12 +76,18 @@ template tmpl_RichardWheeler_PixelTool_32_10_12() {
 	[88+32,	0,	32,	13,	-16,	-9]
 	[88+65,	0,	22,	21,	-7,	-12]
 }
+spriteset(sprites_train_shingle, "gfx/vehicle/shingle.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
+spriteset(sprites_train_shingle_pass, "gfx/vehicle/shingle_pass.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_falcon, "gfx/vehicle/falcon.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_wajonanatassis, "gfx/vehicle/wajo-nanatassis.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_wagon_passenger, "gfx/vehicle/passenger.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_wagon_flatcar, "gfx/vehicle/flatcar.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_wagon_flatcar_wood, "gfx/vehicle/flatcar_wood.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 
+spritegroup spritegroup_train_shingle {
+	loaded:	[sprites_train_shingle, sprites_train_shingle_pass];
+	loading:	[sprites_train_shingle, sprites_train_shingle_pass];
+}
 spritegroup spritegroup_wagon_passenger {
 	loaded:	[sprites_wagon_passenger, sprites_wagon_passenger];
 	loading:	[sprites_wagon_passenger, sprites_wagon_passenger];
@@ -119,6 +125,41 @@ item(FEAT_TRAINS, item_train_peppersass) {
 	}
 	graphics {
 		default: sprites_train_peppersass;
+	}
+}
+item(FEAT_TRAINS, item_train_shingle) {
+	property {
+		name: string(STR_SHINGLE_NAME);
+		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		introduction_date: date(1869,01,01);
+		model_life: 40;
+		vehicle_life: 5;
+		reliability_decay: 20;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		loading_speed: 5;
+		cost_factor: 1;
+		running_cost_factor: 5;
+
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		speed: 60mph;
+		misc_flags: bitmask(TRAIN_FLAG_NO_BREAKDOWN_SMOKE);
+		extra_flags: bitmask(VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW);
+		track_type: COG;
+		ai_special_flag: AI_FLAG_PASSENGER;
+		power: 1 hp;
+		running_cost_base: RUNNING_COST_NONE;
+		default_cargo_type: PASS;
+		cargo_capacity: 4;
+		weight: 1 ton;
+		engine_class: ENGINE_CLASS_STEAM; // Really more gravity powered than anything else
+		tractive_effort_coefficient: 0.1;
+		air_drag_coefficient: 0.02;
+		length: 3;
+		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+	}
+	graphics {
+		default: spritegroup_train_shingle;
+		can_attach_wagon: string(STR_ERROR_CANNOT_ATTACH_ANY);
 	}
 }
 item(FEAT_TRAINS, item_train_falcon) {

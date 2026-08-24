@@ -15,3 +15,5 @@ STR_DIESEL_NAME	:Wojo Nanatasis
 
 STR_PASSENGER_NAME	:Passenger Car
 STR_FLATCAR_NAME	:Flatcar
+
+STR_ERROR_CANNOT_ATTACH_ANY	:Wagons cannot be attached to this engine.
