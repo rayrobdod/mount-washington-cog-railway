@@ -12,6 +12,13 @@ cargotable {
 	PASS,
 	WOOD,
 }
+badgetable {
+	"flag",
+	"flag/US",
+	"power",
+	"power/steam",
+	"power/diesel",
+}
 
 
 spriteset(sprites_rail_gui, "gfx/rail/gui.png") {
@@ -123,6 +130,10 @@ item(FEAT_TRAINS, item_train_peppersass) {
 		tractive_effort_coefficient: 1;
 		length: 8;
 		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, -1, DISABLE_WAGON_POWER);
+		badges: [
+			"flag/US",
+			"power/steam",
+		];
 	}
 	graphics {
 		default: sprites_train_peppersass;
@@ -157,6 +168,9 @@ item(FEAT_TRAINS, item_train_shingle) {
 		air_drag_coefficient: 0.02;
 		length: 3;
 		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+		badges: [
+			"flag/US",
+		];
 	}
 	graphics {
 		default: spritegroup_train_shingle;
@@ -186,6 +200,10 @@ item(FEAT_TRAINS, item_train_falcon) {
 		engine_class: ENGINE_CLASS_STEAM;
 		tractive_effort_coefficient: 1;
 		length: 8;
+		badges: [
+			"flag/US",
+			"power/steam",
+		];
 	}
 	graphics {
 		default: sprites_train_falcon;
@@ -215,6 +233,10 @@ item(FEAT_TRAINS, item_train_diesel) {
 		engine_class: ENGINE_CLASS_DIESEL;
 		tractive_effort_coefficient: 1;
 		length: 8;
+		badges: [
+			"flag/US",
+			"power/diesel",
+		];
 	}
 	graphics {
 		default: sprites_train_wajonanatassis;
@@ -246,6 +268,10 @@ item(FEAT_TRAINS, item_train_speeder) {
 		engine_class: ENGINE_CLASS_DIESEL;
 		tractive_effort_coefficient: 0.9;
 		length: 6;
+		badges: [
+			"flag/US",
+			"power/diesel",
+		];
 	}
 	graphics {
 		default: sprites_train_speeder;
@@ -272,6 +298,9 @@ item(FEAT_TRAINS, item_wagon_passenger) {
 		cargo_capacity: 70;
 		weight: 25 ton;
 		length: 8;
+		badges: [
+			"flag/US",
+		];
 	}
 	graphics {
 		default: spritegroup_wagon_passenger;
@@ -297,6 +326,9 @@ item(FEAT_TRAINS, item_wagon_flatcar) {
 		cargo_capacity: 30;
 		weight: 16 ton;
 		length: 8;
+		badges: [
+			"flag/US",
+		];
 	}
 	graphics {
 		default: spritegroup_wagon_flatcar;
