@@ -4,6 +4,20 @@ grf {
 	desc: string(STR_GRF_DESCRIPTION);
 	version: 0;
 	min_compatible_version: 0;
+	param {
+		vehicle_dates {
+			type: int;
+			name: string(STR_PARAM_DATES_NAME);
+			desc: string(STR_PARAM_DATES_DESC);
+			min_value: 0;
+			max_value: 1;
+			def_value: 0;
+			names: {
+				0: string(STR_PARAM_DATES_VALUE_REAL);
+				1: string(STR_PARAM_DATES_VALUE_TOY);
+			};
+		}
+	}
 }
 railtypetable {
 	COG: ["COG "],
@@ -332,5 +346,31 @@ item(FEAT_TRAINS, item_wagon_flatcar) {
 	}
 	graphics {
 		default: spritegroup_wagon_flatcar;
+	}
+}
+
+
+if (1 == vehicle_dates) {
+	item(FEAT_TRAINS, item_train_peppersass) {
+		property {
+			introduction_date: date(1947,01,01);
+			model_life: 20;
+		}
+	}
+	item(FEAT_TRAINS, item_train_shingle) {
+		property {
+			introduction_date: date(1947,01,01);
+			model_life: 35;
+		}
+	}
+	item(FEAT_TRAINS, item_train_falcon) {
+		property {
+			introduction_date: date(1965,01,01);
+		}
+	}
+	item(FEAT_TRAINS, item_train_speeder) {
+		property {
+			introduction_date: date(1985,01,01);
+		}
 	}
 }
