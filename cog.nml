@@ -32,6 +32,7 @@ badgetable {
 	"power",
 	"power/steam",
 	"power/diesel",
+	"role/prototype",
 }
 
 
@@ -100,6 +101,7 @@ template tmpl_RichardWheeler_PixelTool_32_10_12() {
 spriteset(sprites_train_shingle, "gfx/vehicle/shingle.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_shingle_pass, "gfx/vehicle/shingle_pass.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_falcon, "gfx/vehicle/falcon.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
+spriteset(sprites_train_spirit, "gfx/vehicle/spirit.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_wajonanatassis, "gfx/vehicle/wajo-nanatassis.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_speeder, "gfx/vehicle/speeder.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_wagon_passenger, "gfx/vehicle/passenger.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
@@ -221,6 +223,39 @@ item(FEAT_TRAINS, item_train_falcon) {
 	}
 	graphics {
 		default: sprites_train_falcon;
+	}
+}
+item(FEAT_TRAINS, item_train_spirit) {
+	property {
+		name: string(STR_SPIRIT_NAME);
+		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		introduction_date: date(1976,01,01);
+		model_life: 10;
+		vehicle_life: 10;
+		reliability_decay: 20;
+		refittable_cargo_classes: 0;
+		loading_speed: 5;
+		cost_factor: 25;
+		running_cost_factor: 100 / 3;
+
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		speed: 60mph;
+		track_type: COG;
+		power: 400 hp;
+		running_cost_base: RUNNING_COST_DIESEL;
+		cargo_capacity: 0;
+		weight: 125 ton;
+		engine_class: ENGINE_CLASS_DIESEL;
+		tractive_effort_coefficient: 1;
+		length: 8;
+		badges: [
+			"flag/US",
+			"power/diesel",
+			"role/prototype",
+		];
+	}
+	graphics {
+		default: sprites_train_spirit;
 	}
 }
 item(FEAT_TRAINS, item_train_diesel) {
@@ -366,6 +401,12 @@ if (1 == vehicle_dates) {
 	item(FEAT_TRAINS, item_train_falcon) {
 		property {
 			introduction_date: date(1965,01,01);
+		}
+	}
+	item(FEAT_TRAINS, item_train_spirit) {
+		property {
+			introduction_date: date(1986,01,01);
+			model_life: 25;
 		}
 	}
 	item(FEAT_TRAINS, item_train_speeder) {
