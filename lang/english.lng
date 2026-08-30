@@ -1,6 +1,6 @@
 ##grflangid 0x00
-STR_GRF_NAME	:Cog - Alpha
-STR_GRF_DESCRIPTION	:Mt. Washington Cog Railway
+STR_GRF_NAME	:Mount Washington Cog Railway - Alpha
+STR_GRF_DESCRIPTION	:The engines of the Mount Washington Cog Railway in New Hampshire, United States.
 
 STR_PARAM_DATES_NAME	:Vehicle Start Dates
 STR_PARAM_DATES_DESC	:By default, vehicles' start dates and model life are aligned with the time it was built in reality. This means that several vehicles expire before the default 1950 game start date, and no new vehicles are introduced between that start date and 2008. The scaled option changes vehicle's start dates to be more appropriate for a game in that date range.

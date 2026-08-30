@@ -1,23 +1,25 @@
+FILENAME	:= mtwashingtoncog
+
 NMLC	:= .venv/bin/nmlc
 
 BUILD	:= build
 
-DEPS	:= $(BUILD)/cog.dep
+DEPS	:= $(BUILD)/$(FILENAME).dep
 LANGS	:= $(wildcard lang/*.lng)
 
-all: $(BUILD)/cog.grf
+all: $(BUILD)/$(FILENAME).grf
 
 clean:
-	rm $(BUILD)/cog.grf $(DEPS)
+	rm -r $(BUILD)
 
-install: $(BUILD)/cog.grf
-	cp $(BUILD)/cog.grf ~/.local/share/openttd/newgrf/cog.grf
+install: $(BUILD)/$(FILENAME).grf
+	cp $(BUILD)/$(FILENAME).grf ~/.local/share/openttd/newgrf/$(FILENAME).grf
 
-$(BUILD)/cog.dep: cog.nml
+$(BUILD)/$(FILENAME).dep: cog.nml
 	@mkdir -p $(@D)
-	$(NMLC) -M --MF=$@ --MT=$(BUILD)/cog.grf $<
+	$(NMLC) -M --MF=$@ --MT=$(BUILD)/$(FILENAME).grf $<
 
-$(BUILD)/cog.grf: cog.nml $(LANGS)
+$(BUILD)/$(FILENAME).grf: cog.nml $(LANGS)
 	@mkdir -p $(@D)
 	$(NMLC) --grf=$@ $<
 
