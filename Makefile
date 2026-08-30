@@ -23,10 +23,11 @@ $(BUILD)/$(FILENAME).grf: cog.nml $(LANGS)
 	@mkdir -p $(@D)
 	$(NMLC) --grf=$@ $<
 
-$(BUILD)/$(FILENAME).tar: $(BUILD)/$(FILENAME).grf
+$(BUILD)/$(FILENAME).tar: $(BUILD)/$(FILENAME).grf LICENSE
 	tar --create --file=$@ \
 		--transform=s~^$(BUILD)/~~ \
-		$(BUILD)/$(FILENAME).grf
+		--transform=s~^LICENSE$$~license.txt~ \
+		$^
 
 -include $(DEPS)
 -include user.mk
