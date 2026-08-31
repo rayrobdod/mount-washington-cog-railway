@@ -124,7 +124,7 @@ spritegroup spritegroup_wagon_flatcar {
 item(FEAT_TRAINS, item_train_peppersass) {
 	property {
 		name: string(STR_PEPPERSASS_NAME);
-		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		climates_available: ALL_CLIMATES;
 		introduction_date: date(1869,01,01);
 		model_life: 12;
 		vehicle_life: 12;
@@ -158,7 +158,7 @@ item(FEAT_TRAINS, item_train_peppersass) {
 item(FEAT_TRAINS, item_train_shingle) {
 	property {
 		name: string(STR_SHINGLE_NAME);
-		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		climates_available: ALL_CLIMATES;
 		introduction_date: date(1869,01,01);
 		model_life: 40;
 		vehicle_life: 5;
@@ -196,7 +196,7 @@ item(FEAT_TRAINS, item_train_shingle) {
 item(FEAT_TRAINS, item_train_falcon) {
 	property {
 		name: string(STR_FALCON_NAME);
-		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		climates_available: ALL_CLIMATES;
 		introduction_date: date(1875,01,01);
 		model_life: VEHICLE_NEVER_EXPIRES;
 		vehicle_life: 30;
@@ -228,7 +228,7 @@ item(FEAT_TRAINS, item_train_falcon) {
 item(FEAT_TRAINS, item_train_spirit) {
 	property {
 		name: string(STR_SPIRIT_NAME);
-		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		climates_available: ALL_CLIMATES;
 		introduction_date: date(1976,01,01);
 		model_life: 10;
 		vehicle_life: 10;
@@ -261,7 +261,7 @@ item(FEAT_TRAINS, item_train_spirit) {
 item(FEAT_TRAINS, item_train_diesel) {
 	property {
 		name: string(STR_DIESEL_NAME);
-		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		climates_available: ALL_CLIMATES;
 		introduction_date: date(2008,01,01);
 		model_life: VEHICLE_NEVER_EXPIRES;
 		vehicle_life: 30;
@@ -294,7 +294,7 @@ item(FEAT_TRAINS, item_train_diesel) {
 item(FEAT_TRAINS, item_train_speeder) {
 	property {
 		name: string(STR_SPEEDER_NAME);
-		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		climates_available: ALL_CLIMATES;
 		introduction_date: date(1975,01,01);
 		model_life: VEHICLE_NEVER_EXPIRES;
 		vehicle_life: 20;
@@ -330,7 +330,7 @@ item(FEAT_TRAINS, item_train_speeder) {
 item(FEAT_TRAINS, item_wagon_passenger) {
 	property {
 		name: string(STR_PASSENGER_NAME);
-		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		climates_available: ALL_CLIMATES;
 		introduction_date: date(1869,01,01);
 		model_life: VEHICLE_NEVER_EXPIRES;
 		loading_speed: 5;
@@ -358,7 +358,7 @@ item(FEAT_TRAINS, item_wagon_passenger) {
 item(FEAT_TRAINS, item_wagon_flatcar) {
 	property {
 		name: string(STR_FLATCAR_NAME);
-		climates_available: bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC);
+		climates_available: ALL_CLIMATES;
 		introduction_date: date(1869,01,01);
 		model_life: VEHICLE_NEVER_EXPIRES;
 		loading_speed: 5;
