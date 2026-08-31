@@ -121,6 +121,20 @@ spritegroup spritegroup_wagon_flatcar {
 	loading:	[sprites_wagon_flatcar, sprites_wagon_flatcar_wood];
 }
 
+// The speed these vehicles ascend a 25% grade is very near OTTD's speed floor.
+// Increase speed to make vehicles a little better to play with
+const SPEED_MULTIPLIER = 5;
+
+const DARTBOARD_DETERMINED_WEIGHT = 55;
+const DARTBOARD_DETERMINED_WEIGHT_LIGHTER = 50;
+const DARTBOARD_DETERMINED_WEIGHT_SPEEDER = 15;
+const DARTBOARD_DETERMINED_WEIGHT_PASSENGER = 18;
+const DARTBOARD_DETERMINED_WEIGHT_FLATCAR = 12;
+
+const DARTBOARD_DETERMINED_POWER_FALCON = 300;
+const DARTBOARD_DETERMINED_POWER_SPIRIT = 400;
+const DARTBOARD_DETERMINED_POWER_SPEEDER = 200;
+
 item(FEAT_TRAINS, item_train_peppersass) {
 	property {
 		name: string(STR_PEPPERSASS_NAME);
@@ -136,12 +150,12 @@ item(FEAT_TRAINS, item_train_peppersass) {
 
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		// Real speed is 3mph, but other in-game trains can exceed that without difficulty even on slopes
-		speed: 40mph;
+		speed: SPEED_MULTIPLIER * 3mph;
 		track_type: COG;
 		power: 45 hp; // https://web.archive.org/web/20070814001057/http://www.cog-railway.com/lastrun.htm
 		running_cost_base: RUNNING_COST_STEAM;
 		cargo_capacity: 0;
-		weight: 125 ton;
+		weight: DARTBOARD_DETERMINED_WEIGHT_LIGHTER ton;
 		engine_class: ENGINE_CLASS_STEAM;
 		tractive_effort_coefficient: 1;
 		length: 8;
@@ -207,12 +221,12 @@ item(FEAT_TRAINS, item_train_falcon) {
 		running_cost_factor: 100;
 
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		speed: 50mph;
+		speed: SPEED_MULTIPLIER * 3mph;
 		track_type: COG;
-		power: 400 hp; // to find
+		power: DARTBOARD_DETERMINED_POWER_FALCON hp;
 		running_cost_base: RUNNING_COST_STEAM;
 		cargo_capacity: 0;
-		weight: 125 ton;
+		weight: DARTBOARD_DETERMINED_WEIGHT ton;
 		engine_class: ENGINE_CLASS_STEAM;
 		tractive_effort_coefficient: 1;
 		length: 8;
@@ -239,12 +253,12 @@ item(FEAT_TRAINS, item_train_spirit) {
 		running_cost_factor: 100 / 3;
 
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		speed: 60mph;
+		speed: SPEED_MULTIPLIER * 4mph;
 		track_type: COG;
-		power: 400 hp;
+		power: DARTBOARD_DETERMINED_POWER_SPIRIT hp;
 		running_cost_base: RUNNING_COST_DIESEL;
 		cargo_capacity: 0;
-		weight: 125 ton;
+		weight: DARTBOARD_DETERMINED_WEIGHT_LIGHTER ton;
 		engine_class: ENGINE_CLASS_DIESEL;
 		tractive_effort_coefficient: 1;
 		length: 8;
@@ -273,12 +287,12 @@ item(FEAT_TRAINS, item_train_diesel) {
 
 		sprite_id: SPRITE_ID_NEW_TRAIN;
 		// Real speed is 5mph, but other in-game trains can exceed that without difficulty even on slopes
-		speed: 60mph; 
+		speed: SPEED_MULTIPLIER * 5mph;
 		track_type: COG;
 		power: 600 hp; // https://www.thecog.com/diesel-debut
 		running_cost_base: RUNNING_COST_DIESEL;
 		cargo_capacity: 0;
-		weight: 125 ton;
+		weight: DARTBOARD_DETERMINED_WEIGHT ton;
 		engine_class: ENGINE_CLASS_DIESEL;
 		tractive_effort_coefficient: 1;
 		length: 8;
@@ -305,15 +319,16 @@ item(FEAT_TRAINS, item_train_speeder) {
 		running_cost_factor: 10;
 
 		sprite_id: SPRITE_ID_NEW_TRAIN;
-		speed: 120mph;
+		// up mtn in 15 minutes, compared to diesel's 40 minute travel time
+		speed: SPEED_MULTIPLIER * 13mph;
 		extra_flags: bitmask(VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW);
 		track_type: COG;
 		ai_special_flag: AI_FLAG_PASSENGER;
-		power: 200 hp;
+		power: DARTBOARD_DETERMINED_POWER_SPEEDER hp;
 		running_cost_base: RUNNING_COST_DIESEL;
 		default_cargo_type: PASS;
 		cargo_capacity: 4;
-		weight: 15 ton;
+		weight: DARTBOARD_DETERMINED_WEIGHT_SPEEDER ton;
 		engine_class: ENGINE_CLASS_DIESEL;
 		tractive_effort_coefficient: 0.9;
 		length: 6;
@@ -345,7 +360,7 @@ item(FEAT_TRAINS, item_wagon_passenger) {
 		refittable_cargo_classes: bitmask(CC_PASSENGERS);
 		default_cargo_type: PASS;
 		cargo_capacity: 70;
-		weight: 25 ton;
+		weight: DARTBOARD_DETERMINED_WEIGHT_PASSENGER ton;
 		length: 8;
 		badges: [
 			"flag/US",
@@ -373,7 +388,7 @@ item(FEAT_TRAINS, item_wagon_flatcar) {
 		refittable_cargo_classes: bitmask(CC_PIECE_GOODS);
 		default_cargo_type: WOOD;
 		cargo_capacity: 30;
-		weight: 16 ton;
+		weight: DARTBOARD_DETERMINED_WEIGHT_FLATCAR ton;
 		length: 8;
 		badges: [
 			"flag/US",
