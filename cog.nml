@@ -34,7 +34,7 @@ grf {
 	}
 }
 railtypetable {
-	COG: ["COG "],
+	COG: ["SrAN", "SRAN", "NrAN", "NRAN", "RAIL"],
 }
 cargotable {
 	PASS,
@@ -49,44 +49,6 @@ badgetable {
 	"role/prototype",
 }
 
-
-spriteset(sprites_rail_gui, "gfx/rail/gui.png") {
-	//left_x,	upper_y,	width,	height,	offset_x,	offset_y
-	[ 12,	12,	20,	20,	0,	0]
-	[ 62,	12,	20,	20,	0,	0]
-	[ 112,	12,	20,	20,	0,	0]
-	[ 162,	12,	20,	20,	0,	0]
-	[ 212,	12,	20,	20,	0,	0]
-	[ 262,	12,	20,	20,	0,	0]
-	[ 312,	12,	20,	20,	0,	0]
-	[ 362,	12,	20,	20,	0,	0]
-	[ 0,	0,	32,	32,	0,	0]
-	[ 50,	0,	32,	32,	0,	0]
-	[ 100,	0,	32,	32,	0,	0]
-	[ 150,	0,	32,	32,	0,	0]
-	[ 200,	0,	32,	32,	0,	0]
-	[ 250,	0,	32,	32,	0,	0]
-	[ 300,	0,	32,	32,	0,	0]
-	[ 350,	0,	32,	32,	0,	0]
-}
-item(FEAT_RAILTYPES, item_rail_cog) {
-	property {
-		label: "COG ";
-		introduction_date: date(1869,01,01);
-		name: string(STR_RAILTYPE_NAME);
-		menu_text: string(STR_RAILTYPE_MENU);
-		build_window_caption: string(STR_RAILTYPE_BUILD);
-		autoreplace_text: string(STR_RAILTYPE_AUTOREPLACE);
-		new_engine_text: string(STR_RAILTYPE_NEWENGINE);
-		compatible_railtype_list: ["RAIL"];
-		construction_cost: 16;
-		maintenance_cost: 16;
-		acceleration_model: ACC_MODEL_RAIL;
-	}
-	graphics {
-		gui: sprites_rail_gui;
-	}
-}
 
 template tmpl_RichardWheeler_PixelTool_32_12_12() {
 	//left_x,	upper_y,	width,	height,	offset_x,	offset_y
