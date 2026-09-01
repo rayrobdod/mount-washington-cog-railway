@@ -5,6 +5,20 @@ grf {
 	version: 0;
 	min_compatible_version: 0;
 	param {
+		disable_speeders {
+			type: bool;
+			name: string(STR_PARAM_DISABLESPEEDER_NAME);
+			desc: string(STR_PARAM_DISABLESPEEDER_DESC);
+			def_value: 0;
+		}
+		disable_prototypes {
+			type: bool;
+			name: string(STR_PARAM_DISABLEPROTOTYPE_NAME);
+			desc: string(STR_PARAM_DISABLEPROTOTYPE_DESC);
+			def_value: 0;
+		}
+	}
+	param {
 		vehicle_dates {
 			type: int;
 			name: string(STR_PARAM_DATES_NAME);
@@ -427,6 +441,25 @@ if (1 == vehicle_dates) {
 	item(FEAT_TRAINS, item_train_speeder) {
 		property {
 			introduction_date: date(1985,01,01);
+		}
+	}
+}
+if (disable_speeders) {
+	item(FEAT_TRAINS, item_train_shingle) {
+		property {
+			climates_available: NO_CLIMATE;
+		}
+	}
+	item(FEAT_TRAINS, item_train_speeder) {
+		property {
+			climates_available: NO_CLIMATE;
+		}
+	}
+}
+if (disable_prototypes) {
+	item(FEAT_TRAINS, item_train_spirit) {
+		property {
+			climates_available: NO_CLIMATE;
 		}
 	}
 }
