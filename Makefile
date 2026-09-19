@@ -23,7 +23,7 @@ $(BUILD)/$(FILENAME).grf: cog.nml $(LANGS)
 	@mkdir -p $(@D)
 	$(NMLC) --grf=$@ $<
 
-$(BUILD)/$(FILENAME).tar: $(BUILD)/$(FILENAME).grf LICENSE
+$(BUILD)/$(FILENAME).tar: $(BUILD)/$(FILENAME).grf readme.txt LICENSE
 	tar --create --file=$@ \
 		--transform=s~^$(BUILD)/~~ \
 		--transform=s~^LICENSE$$~license.txt~ \
