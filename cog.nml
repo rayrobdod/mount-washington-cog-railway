@@ -145,44 +145,6 @@ item(FEAT_TRAINS, item_train_peppersass) {
 		default: sprites_train_peppersass;
 	}
 }
-item(FEAT_TRAINS, item_train_shingle) {
-	property {
-		name: string(STR_SHINGLE_NAME);
-		climates_available: ALL_CLIMATES;
-		introduction_date: date(1869,01,01);
-		model_life: 40;
-		vehicle_life: 5;
-		reliability_decay: 20;
-		refittable_cargo_classes: bitmask(CC_PASSENGERS);
-		loading_speed: 5;
-		cost_factor: 1;
-		running_cost_factor: 5;
-
-		sprite_id: SPRITE_ID_NEW_TRAIN;
-		speed: 60mph;
-		misc_flags: bitmask(TRAIN_FLAG_NO_BREAKDOWN_SMOKE);
-		extra_flags: bitmask(VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW);
-		track_type: COG;
-		ai_special_flag: AI_FLAG_PASSENGER;
-		power: 1 hp;
-		running_cost_base: RUNNING_COST_NONE;
-		default_cargo_type: PASS;
-		cargo_capacity: 4;
-		weight: 1 ton;
-		engine_class: ENGINE_CLASS_STEAM; // Really more gravity powered than anything else
-		tractive_effort_coefficient: 0.1;
-		air_drag_coefficient: 0.02;
-		length: 3;
-		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
-		badges: [
-			"flag/US",
-		];
-	}
-	graphics {
-		default: spritegroup_train_shingle;
-		can_attach_wagon: string(STR_ERROR_CANNOT_ATTACH_ANY);
-	}
-}
 item(FEAT_TRAINS, item_train_falcon) {
 	property {
 		name: string(STR_FALCON_NAME);
@@ -281,6 +243,46 @@ item(FEAT_TRAINS, item_train_diesel) {
 		default: sprites_train_wajonanatasis;
 	}
 }
+
+
+item(FEAT_TRAINS, item_train_shingle) {
+	property {
+		name: string(STR_SHINGLE_NAME);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1869,01,01);
+		model_life: 40;
+		vehicle_life: 5;
+		reliability_decay: 20;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		loading_speed: 5;
+		cost_factor: 1;
+		running_cost_factor: 5;
+
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		speed: 60mph;
+		misc_flags: bitmask(TRAIN_FLAG_NO_BREAKDOWN_SMOKE);
+		extra_flags: bitmask(VEHICLE_FLAG_DISABLE_EXCLUSIVE_PREVIEW);
+		track_type: COG;
+		ai_special_flag: AI_FLAG_PASSENGER;
+		power: 1 hp;
+		running_cost_base: RUNNING_COST_NONE;
+		default_cargo_type: PASS;
+		cargo_capacity: 4;
+		weight: 1 ton;
+		engine_class: ENGINE_CLASS_STEAM; // Really more gravity powered than anything else
+		tractive_effort_coefficient: 0.1;
+		air_drag_coefficient: 0.02;
+		length: 3;
+		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_DISABLE, 0, DISABLE_WAGON_POWER);
+		badges: [
+			"flag/US",
+		];
+	}
+	graphics {
+		default: spritegroup_train_shingle;
+		can_attach_wagon: string(STR_ERROR_CANNOT_ATTACH_ANY);
+	}
+}
 item(FEAT_TRAINS, item_train_speeder) {
 	property {
 		name: string(STR_SPEEDER_NAME);
@@ -318,6 +320,8 @@ item(FEAT_TRAINS, item_train_speeder) {
 		can_attach_wagon: string(STR_ERROR_CANNOT_ATTACH_ANY);
 	}
 }
+
+
 item(FEAT_TRAINS, item_wagon_passenger) {
 	property {
 		name: string(STR_PASSENGER_NAME);
