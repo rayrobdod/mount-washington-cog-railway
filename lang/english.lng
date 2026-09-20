@@ -3,9 +3,9 @@ STR_GRF_NAME	:Mount Washington Cog Railway - Alpha
 STR_GRF_DESCRIPTION	:The engines of the Mount Washington Cog Railway in New Hampshire, United States.
 
 STR_PARAM_DISABLESPEEDER_NAME	:Disable worker service vehicles
-STR_PARAM_DISABLESPEEDER_DESC	:Enable/Disable vehicles for worker service use (minimal capacity and that do not allow wagons)
+STR_PARAM_DISABLESPEEDER_DESC	:Enable/Disable vehicles for worker service use.{}Specifically the Devil's Shingle and the Hornet.{}These engines as implemented do not accept wagons and have minimal passenger capacity, making these engines more eyecandy than useful.
 STR_PARAM_DISABLEPROTOTYPE_NAME	:Disable prototype vehicles
-STR_PARAM_DISABLEPROTOTYPE_DESC	:Enable/Disable vehicles that were built, but not used in service
+STR_PARAM_DISABLEPROTOTYPE_DESC	:Enable/Disable vehicles that were built, but not used in service.{}Specifically the Spirit.
 
 STR_PARAM_DATES_NAME	:Vehicle Start Dates
 STR_PARAM_DATES_DESC	:By default, vehicles' start dates and model life are aligned with the time it was built in reality. This means that several vehicles expire before the default 1950 game start date, and no new vehicles are introduced between that start date and 2008. The scaled option changes vehicle's start dates to be more appropriate for a game in that date range.
