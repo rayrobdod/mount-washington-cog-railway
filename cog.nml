@@ -78,7 +78,7 @@ spriteset(sprites_train_shingle, "gfx/vehicle/shingle.png") { tmpl_RichardWheele
 spriteset(sprites_train_shingle_pass, "gfx/vehicle/shingle_pass.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_falcon, "gfx/vehicle/falcon.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_spirit, "gfx/vehicle/spirit.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
-spriteset(sprites_train_wajonanatassis, "gfx/vehicle/wajo-nanatassis.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
+spriteset(sprites_train_wajonanatasis, "gfx/vehicle/wajo-nanatasis.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_speeder, "gfx/vehicle/speeder.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_wagon_passenger, "gfx/vehicle/passenger.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_wagon_flatcar, "gfx/vehicle/flatcar.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
@@ -278,7 +278,7 @@ item(FEAT_TRAINS, item_train_diesel) {
 		];
 	}
 	graphics {
-		default: sprites_train_wajonanatassis;
+		default: sprites_train_wajonanatasis;
 	}
 }
 item(FEAT_TRAINS, item_train_speeder) {
