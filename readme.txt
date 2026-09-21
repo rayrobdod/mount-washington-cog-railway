@@ -110,8 +110,8 @@ than a seat that slides down the center rack rail. It isn't powered,
 but it attaches to the rack rail and was used by employees to quickly
 descend the mountain.
 
-The next class of engine, represented by Falcon, is a steam engine with
-a more traditional horizontal boiler, though the boiler is slightly
+The next class of engine, represented by Hercules, is a steam engine
+with a more traditional horizontal boiler, though the boiler is slightly
 slanted to counteract the steep grade. Two engines of this class run
 regularly as of 2026.
 
