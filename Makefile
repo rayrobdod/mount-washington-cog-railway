@@ -21,7 +21,7 @@ $(BUILD)/$(FILENAME).dep: cog.nml
 
 $(BUILD)/$(FILENAME).grf: cog.nml $(LANGS)
 	@mkdir -p $(@D)
-	$(NMLC) --grf=$@ $<
+	$(NMLC) -c --grf=$@ $<
 
 $(BUILD)/$(FILENAME).tar: $(BUILD)/$(FILENAME).grf readme.txt LICENSE
 	tar --create --file=$@ \
