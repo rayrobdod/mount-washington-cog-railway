@@ -76,6 +76,7 @@ template tmpl_RichardWheeler_PixelTool_32_10_12() {
 }
 spriteset(sprites_train_shingle, "gfx/vehicle/shingle.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_shingle_pass, "gfx/vehicle/shingle_pass.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
+spriteset(sprites_train_verticalboiler2, "gfx/vehicle/george-stephenson.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_horizontalboiler, "gfx/vehicle/horizontal-boiler.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_spirit, "gfx/vehicle/spirit.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
 spriteset(sprites_train_wajonanatasis, "gfx/vehicle/wajo-nanatasis.png") { tmpl_RichardWheeler_PixelTool_32_10_12() }
@@ -107,6 +108,7 @@ const DARTBOARD_DETERMINED_WEIGHT_SPEEDER = 15;
 const DARTBOARD_DETERMINED_WEIGHT_PASSENGER = 18;
 const DARTBOARD_DETERMINED_WEIGHT_FLATCAR = 12;
 
+const DARTBOARD_DETERMINED_POWER_VERTICALBOILER2 = 45;
 const DARTBOARD_DETERMINED_POWER_HORIZONTALBOILER = 300;
 const DARTBOARD_DETERMINED_POWER_SPIRIT = 400;
 const DARTBOARD_DETERMINED_POWER_SPEEDER = 200;
@@ -143,6 +145,41 @@ item(FEAT_TRAINS, item_train_peppersass) {
 	}
 	graphics {
 		default: sprites_train_peppersass;
+	}
+}
+item(FEAT_TRAINS, item_train_verticalboiler2) {
+	property {
+		name: string(STR_VERTICALBOILER2_NAME);
+		climates_available: ALL_CLIMATES;
+		introduction_date: date(1869,01,01);
+		// Stephenson was scrapped in 1878.
+		// The other members of this class were built later and scrapped or rebuilt earlier
+		model_life: 10;
+		vehicle_life: 10;
+		reliability_decay: 20;
+		refittable_cargo_classes: 0;
+		loading_speed: 5;
+		cost_factor: 20;
+		running_cost_factor: 100;
+
+		sprite_id: SPRITE_ID_NEW_TRAIN;
+		speed: SPEED_MULTIPLIER * 3mph;
+		track_type: COG;
+		power: DARTBOARD_DETERMINED_POWER_VERTICALBOILER2 hp;
+		running_cost_base: RUNNING_COST_STEAM;
+		cargo_capacity: 0;
+		weight: DARTBOARD_DETERMINED_WEIGHT_LIGHTER ton;
+		engine_class: ENGINE_CLASS_STEAM;
+		tractive_effort_coefficient: 1;
+		length: 7;
+		visual_effect_and_powered: visual_effect_and_powered(VISUAL_EFFECT_STEAM, -3, DISABLE_WAGON_POWER);
+		badges: [
+			"flag/US",
+			"power/steam",
+		];
+	}
+	graphics {
+		default: sprites_train_verticalboiler2;
 	}
 }
 item(FEAT_TRAINS, item_train_horizontalboiler) {
@@ -394,20 +431,31 @@ if (1 == vehicle_dates) {
 			model_life: 35;
 		}
 	}
+	item(FEAT_TRAINS, item_train_verticalboiler2) {
+		property {
+			introduction_date: date(1962,01,01);
+			model_life: 20;
+		}
+	}
 	item(FEAT_TRAINS, item_train_horizontalboiler) {
 		property {
-			introduction_date: date(1965,01,01);
+			introduction_date: date(1975,01,01);
 		}
 	}
 	item(FEAT_TRAINS, item_train_spirit) {
 		property {
-			introduction_date: date(1986,01,01);
+			introduction_date: date(1990,01,01);
 			model_life: 25;
 		}
 	}
 	item(FEAT_TRAINS, item_train_speeder) {
 		property {
-			introduction_date: date(1985,01,01);
+			introduction_date: date(1990,01,01);
+		}
+	}
+	item(FEAT_TRAINS, item_train_diesel) {
+		property {
+			introduction_date: date(2008,01,01);
 		}
 	}
 }

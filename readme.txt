@@ -10,7 +10,7 @@ This trainset provides train engines and carriages based on the engines
 and carriages used by or built by The Mount Washington Cog Railway in
 New Hampshire, United States.
 
-The set includes four normal engines, two carriages, and two eyecandy
+The set includes five normal engines, two carriages, and two eyecandy
 service vehicles.
 
 GRF ID:   "RRD\01", 0x52524401
@@ -109,6 +109,10 @@ The earlier service vehicle is the Devil's Shingle. It is not much more
 than a seat that slides down the center rack rail. It isn't powered,
 but it attaches to the rack rail and was used by employees to quickly
 descend the mountain.
+
+The next class of engine, represented by George Stephenson, continues to
+have a vertical boiler, but seems to be more fixed in angle relative to
+the vehicle, and with a covered cab.
 
 The next class of engine, represented by Hercules, is a steam engine
 with a more traditional horizontal boiler, though the boiler is slightly
