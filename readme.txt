@@ -43,7 +43,7 @@ OpenTTD:
 
 - 2nd parameter: Vehicle start dates
   - 0: Use real introduction dates.
-       Introduction dates range from 1869 to 2008
+       Introduction dates range from 1866 to 2008
   - 1: Use dates scaled for a 1950-2050 game.
        Introduction dates range from 1947 to 2008;
        a new engine (counting Spirit) is introduced approximately every

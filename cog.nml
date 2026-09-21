@@ -115,7 +115,7 @@ item(FEAT_TRAINS, item_train_peppersass) {
 	property {
 		name: string(STR_PEPPERSASS_NAME);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1869,01,01);
+		introduction_date: date(1866,08,01);
 		model_life: 12;
 		vehicle_life: 12;
 		reliability_decay: 20;
@@ -249,7 +249,7 @@ item(FEAT_TRAINS, item_train_shingle) {
 	property {
 		name: string(STR_SHINGLE_NAME);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1869,01,01);
+		introduction_date: date(1866,08,01);
 		model_life: 40;
 		vehicle_life: 5;
 		reliability_decay: 20;
@@ -326,7 +326,8 @@ item(FEAT_TRAINS, item_wagon_passenger) {
 	property {
 		name: string(STR_PASSENGER_NAME);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1869,01,01);
+		// Although not fully complete, passenger excursions started 1868, with the rest of the track being completed the following year
+		introduction_date: date(1868,08,14);
 		model_life: VEHICLE_NEVER_EXPIRES;
 		loading_speed: 5;
 		cost_factor: 100;
@@ -354,7 +355,7 @@ item(FEAT_TRAINS, item_wagon_flatcar) {
 	property {
 		name: string(STR_FLATCAR_NAME);
 		climates_available: ALL_CLIMATES;
-		introduction_date: date(1869,01,01);
+		introduction_date: date(1866,08,01);
 		model_life: VEHICLE_NEVER_EXPIRES;
 		loading_speed: 5;
 		cost_factor: 70;
