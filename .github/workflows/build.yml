@@ -1,0 +1,21 @@
+name: Build
+on: [push, pull_request]
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    name: build
+    steps:
+    - uses: actions/checkout@v7
+    - name: Install nmlc
+      run: pip3 install nml
+    - name: print versions
+      run: nmlc --version
+    - name: make
+      run: make
+    - name: upload
+      uses: actions/upload-artifact@v7
+      with:
+        name: mtwashingtoncog.tar
+        path: build/mtwashingtoncog.tar

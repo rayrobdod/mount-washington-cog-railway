@@ -1,6 +1,6 @@
 FILENAME	:= mtwashingtoncog
 
-NMLC	:= .venv/bin/nmlc
+NMLC	:= nmlc
 
 BUILD	:= build
 
